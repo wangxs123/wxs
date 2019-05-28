@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 文件输出格式 -->
+    <property name="PATTERN_CONSOLE" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %cyan([wxs]) %highlight(%-5level) --- [%thread]  %green(%logger){50} %yellow(%M) %cyan(%L) - %msg%n"/>
+    <property name="PATTERN_LOG" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [wxs] %-5level --- [%thread]  %logger{50} %M %L - %msg%n"/>
+    <!-- qa文件路径 -->
+    <property name="QA_FILE_PATH" value="${catalina.base}/logs/qa/wxs"/>
+    <!-- product文件路径 -->
+    <property name="PRO_FILE_PATH" value="${catalina.base}/logs/product/wxs"/>
+
+    <!-- 开发环境 -->
+    <springProfile name="dev">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${PATTERN_CONSOLE}</pattern>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <!-- 开发环境 -->
+    <springProfile name="qa">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${PATTERN_CONSOLE}</pattern>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <!-- 开发环境 -->
+    <springProfile name="uat">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${PATTERN_CONSOLE}</pattern>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <!-- 开发环境 -->
+    <springProfile name="product">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${PATTERN_CONSOLE}</pattern>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+</configuration>
