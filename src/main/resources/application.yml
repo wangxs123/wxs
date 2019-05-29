@@ -1,1 +1,13 @@
-
+profiles:
+  active: dev
+jackson:
+  date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: Hongkong
+server:
+  port: 8088
+  servlet:
+    context-path: /wxs
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error

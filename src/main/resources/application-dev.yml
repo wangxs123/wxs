@@ -1,1 +1,15 @@
-
+profiles: 开发环境(dev)
+spring:
+  redis:
+    database: 2
+    host: 127.0.0.1
+    port: 6379
+    timeout: 1000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+swagger:
+  enable: true
