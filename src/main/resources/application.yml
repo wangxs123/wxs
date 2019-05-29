@@ -1,10 +1,14 @@
-profiles:
-  active: dev
-jackson:
-  date-format: yyyy-MM-dd HH:mm:ss
-  time-zone: Hongkong
+spring:
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Hongkong
+  resources:
+    static-locations: classpath:/static/,classpath:/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
+
 server:
-  port: 8088
+  port: 8099
   servlet:
     context-path: /wxs
 logging:

@@ -161,9 +161,9 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>com.wxs.api</groupId>
-            <artifactId>dubbo-service</artifactId>
-            <version>0.0.1</version>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>1.0.2</version>
         </dependency>
 
     </dependencies>

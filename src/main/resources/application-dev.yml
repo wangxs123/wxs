@@ -13,3 +13,6 @@ spring:
         min-idle: 0
 swagger:
   enable: true
+resource:
+  template:
+    audioPath: /home/audio

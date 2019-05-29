@@ -12,5 +12,7 @@ spring:
         max-idle: 8
         min-idle: 0
 swagger:
-  enable: true
-
+  enable: false
+resource:
+  template:
+    audioPath: /home/audio
