@@ -5,15 +5,19 @@
 		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="${dubbo.application.name}"/>
+    <dubbo:application name="wxsa"/>
 
     <!--zookeeper配置-->
-    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"
-                    group="${dubbo.registry.group}" client="${dubbo.registry.client}"
-                    timeout="${dubbo.registry.timeout}" check="${dubbo.registry.check}"/>
+    <!--<dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"-->
+                    <!--group="${dubbo.registry.group}" client="${dubbo.registry.client}"-->
+                    <!--timeout="${dubbo.registry.timeout}" check="${dubbo.registry.check}"/>-->
+    <dubbo:registry  address="zookeeper://127.0.0.1:2181"
+                    />
 
     <!-- dubbo注解扫描包名 -->
     <dubbo:annotation package="com.wxs.controller"></dubbo:annotation>
+    <dubbo:protocol name="dubbo"></dubbo:protocol>
+    <dubbo:reference interface="common.service.UserService" id="userService"></dubbo:reference>
 
     <!--是否检查消费端-->
     <dubbo:consumer check="false"/>
